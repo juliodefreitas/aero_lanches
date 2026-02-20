@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags para configuração básica da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Descrição para SEO e redes sociais -->
+    <meta name="description" content="Aero Lanches - Lanchonete em Curitiba. Qualidade, rapidez e sabor para você! Delivery e retirada disponíveis.">
+    <title>Aero Lanches - Sabor que voa até você!</title>
+    
+    <!-- Link para o arquivo CSS de estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Pré-conexão com Google Fonts para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importação da fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho fixo do site com logo e menu de navegação -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo da lanchonete -->
+            <div class="logo">
+                <img src="assents/icons/logo.png.png" alt="Aero Lanches" class="logo-img">
+            </div>
+            <!-- Menu de navegação principal -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <!-- Links de navegação para as seções do site -->
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#localizacao" class="nav-link">Localização</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <!-- Botão hambúrguer para menu mobile (3 linhas) -->
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Hero: Banner principal com chamada para ação -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="hero-title">Sabor que voa até você!</h2>
+            <p class="hero-subtitle">Lanchonete com qualidade, rapidez e muito sabor</p>
+            <!-- Botão principal que leva para a seção de contato -->
+            <a href="#contato" class="btn btn-primary">Fazer Pedido</a>
+        </div>
+        <!-- Overlay para efeito visual no background -->
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Seção Sobre: Apresenta as principais qualidades da lanchonete -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre a Aero Lanches</h2>
+            <!-- Grid com 3 cards mostrando as qualidades principais -->
+            <div class="qualidades-grid">
+                <!-- Card 1: Ambiente familiar -->
+                <div class="qualidade-card">
+                    <div class="qualidade-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Lugar para a Família</h3>
+                    <p>A Aero Lanches é um lugar para sair com a família. Ambiente acolhedor e descontraído para você aproveitar momentos especiais com quem mais ama.</p>
+                </div>
+                <!-- Card 2: Ambiente para relaxar -->
+                <div class="qualidade-card">
+                    <div class="qualidade-icon">🍺🍟</div>
+                    <h3>Relaxar e Aproveitar</h3>
+                    <p>Ideal para quem quer relaxar tomando uma cerveja e comendo um petisco. O ambiente perfeito para descontrair e saborear os melhores momentos.</p>
+                </div>
+                <!-- Card 3: Delivery e retirada -->
+                <div class="qualidade-card">
+                    <div class="qualidade-icon">📦</div>
+                    <h3>Ideal para Delivery e Retirada</h3>
+                    <p>Peça pelo WhatsApp e receba no conforto da sua casa ou retire rapidamente em nossa loja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Avaliações: Depoimentos de clientes com sistema de estrelas -->
+    <section class="avaliacoes" id="avaliacoes">
+        <div class="container">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <!-- Grid com avaliações dos clientes -->
+            <div class="avaliacoes-grid">
+                <!-- Avaliação 1: José Rota Jr - 4.0 estrelas -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="avaliacao-nome">José Rota Jr</div>
+                        <!-- Sistema de estrelas com rating de 4.0 (classe CSS controla a visualização) -->
+                        <div class="avaliacao-estrelas rating-4-0"></div>
+                    </div>
+                    <p class="avaliacao-texto">"Lanchonete raiz, sanduíche muito gostoso, atendimento caprichado. Lugar em que o pessoal pode comer e beber com os amigos. Ótima opção para um lanche na região."</p>
+                </div>
+                <!-- Avaliação 2: Rogerio Dias - 3.9 estrelas -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="avaliacao-nome">Rogerio Dias</div>
+                        <!-- Sistema de estrelas com rating de 3.9 -->
+                        <div class="avaliacao-estrelas rating-3-9"></div>
+                    </div>
+                    <p class="avaliacao-texto">"Ótima relação custo benefício. Local simples com bom atendimento."</p>
+                </div>
+                <!-- Avaliação 3: Jennifer Santana - 4.5 estrelas -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="avaliacao-nome">Jennifer Santana</div>
+                        <!-- Sistema de estrelas com rating de 4.5 -->
+                        <div class="avaliacao-estrelas rating-4-5"></div>
+                    </div>
+                    <p class="avaliacao-texto">"Muito bom!! Lanches deliciosos, atendimento ótimo!! Só não tenho muita sorte quando vou lá, sempre me deparo com fumantes que detonam comigo, já que sofro de problemas respiratórios. Seria legal um local exclusivo ou o bom senso dos frequentadores já seria de alta ajuda."</p>
+                </div>
+                <!-- Avaliação 4: Sergio Oliveira - 5.0 estrelas -->
+                <div class="avaliacao-card">
+                    <div class="avaliacao-header">
+                        <div class="avaliacao-nome">Sergio Oliveira</div>
+                        <!-- Sistema de estrelas com rating de 5.0 -->
+                        <div class="avaliacao-estrelas rating-5-0"></div>
+                    </div>
+                    <p class="avaliacao-texto">"Ótimos local para fazer um lanche, tem bons preços, cardápio bem variado, com petiscos, bebidas e porções que servem tranquilamente duas pessoas. Ótimo atendimento e boa localização"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Localização: Endereço e mapa incorporado do Google Maps -->
+    <section class="localizacao" id="localizacao">
+        <div class="container">
+            <h2 class="section-title">Nossa Localização</h2>
+            <div class="localizacao-content">
+                <!-- Informações do endereço -->
+                <div class="endereco-info">
+                    <h3>Venha nos visitar!</h3>
+                    <p class="endereco-text">
+                        <strong>R. Holanda, 580 - Boa Vista</strong><br>
+                        Curitiba - PR, 82510-190
+                    </p>
+                    <!-- Link para abrir o Google Maps em nova aba -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=R.+Holanda,+580+-+Boa+Vista,+Curitiba+-+PR,+82510-190" 
+                       target="_blank" 
+                       class="btn btn-secondary">
+                        Ver no Google Maps
+                    </a>
+                </div>
+                <!-- Container com mapa incorporado do Google Maps -->
+                <div class="mapa-container">
+                    <!-- Iframe do Google Maps com embed do endereço -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.89!2d-49.2185779!3d-25.4283814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce472c5e2b4d7%3A0x1234567890abcdef!2sR.%20Holanda%2C%20580%20-%20Boa%20Vista%2C%20Curitiba%20-%20PR%2C%2082510-190!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Aero Lanches">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato: Botão para WhatsApp com mensagem pré-formatada -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="contato-text">Fale conosco pelo WhatsApp e faça seu pedido agora mesmo!</p>
+            <!-- Link do WhatsApp com número e mensagem automática -->
+            <!-- Número: +55 43 98849-1817 -->
+            <a href="https://wa.me/5543988491817?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Aero%20Lanches%20🍔" 
+               target="_blank" 
+               class="btn btn-whatsapp">
+                <span>💬</span>
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé: Informações da empresa, endereço e redes sociais -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Seção 1: Nome e slogan da empresa -->
+                <div class="footer-section">
+                    <h3>Aero Lanches</h3>
+                    <p>O melhor sabor para você!</p>
+                </div>
+                <!-- Seção 2: Endereço completo -->
+                <div class="footer-section">
+                    <h4>Endereço</h4>
+                    <p>R. Holanda, 580 - Boa Vista<br>Curitiba - PR, 82510-190</p>
+                </div>
+                <!-- Seção 3: Links para redes sociais -->
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Facebook">👤</a>
+                        <a href="https://wa.me/5543988491817" target="_blank" class="social-link" aria-label="WhatsApp">💬</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; Aero Lanches por Julio Gabriel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp: Fixo na tela, visível em todas as páginas -->
+    <!-- Abre WhatsApp com mensagem pré-formatada ao clicar -->
+    <a href="https://wa.me/5543988491817?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Aero%20Lanches%20🍔" 
+       target="_blank" 
+       class="whatsapp-float"
+       aria-label="Falar no WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+        <span class="whatsapp-text">Pedir Agora</span>
+    </a>
+
+    <!-- Popup de Resenhas em Formato de Celular -->
+    <div class="popup-resenhas" id="popupResenhas">
+        <div class="popup-overlay"></div>
+        <div class="popup-phone">
+            <!-- Barra superior do celular (notch) -->
+            <div class="phone-notch"></div>
+            
+            <!-- Header do popup -->
+            <div class="popup-header">
+                <h3>Avaliações dos Clientes</h3>
+                <button class="popup-close" id="closePopup">&times;</button>
+            </div>
+            
+            <!-- Container do carrossel de resenhas -->
+            <div class="popup-content">
+                <div class="resenhas-carousel" id="resenhasCarousel">
+                    <!-- Resenha 1 -->
+                    <div class="resenha-slide active">
+                        <div class="resenha-header-popup">
+                            <div class="resenha-nome-popup">José Rota Jr</div>
+                            <div class="resenha-estrelas-popup rating-4-0"></div>
+                        </div>
+                        <p class="resenha-texto-popup">"Lanchonete raiz, sanduíche muito gostoso, atendimento caprichado. Lugar em que o pessoal pode comer e beber com os amigos. Ótima opção para um lanche na região."</p>
+                    </div>
+                    
+                    <!-- Resenha 2 -->
+                    <div class="resenha-slide">
+                        <div class="resenha-header-popup">
+                            <div class="resenha-nome-popup">Rogerio Dias</div>
+                            <div class="resenha-estrelas-popup rating-3-9"></div>
+                        </div>
+                        <p class="resenha-texto-popup">"Ótima relação custo benefício. Local simples com bom atendimento."</p>
+                    </div>
+                    
+                    <!-- Resenha 3 -->
+                    <div class="resenha-slide">
+                        <div class="resenha-header-popup">
+                            <div class="resenha-nome-popup">Jennifer Santana</div>
+                            <div class="resenha-estrelas-popup rating-4-5"></div>
+                        </div>
+                        <p class="resenha-texto-popup">"Muito bom!! Lanches deliciosos, atendimento ótimo!! Só não tenho muita sorte quando vou lá, sempre me deparo com fumantes que detonam comigo, já que sofro de problemas respiratórios. Seria legal um local exclusivo ou o bom senso dos frequentadores já seria de alta ajuda."</p>
+                    </div>
+                    
+                    <!-- Resenha 4 -->
+                    <div class="resenha-slide">
+                        <div class="resenha-header-popup">
+                            <div class="resenha-nome-popup">Sergio Oliveira</div>
+                            <div class="resenha-estrelas-popup rating-5-0"></div>
+                        </div>
+                        <p class="resenha-texto-popup">"Ótimos local para fazer um lanche, tem bons preços, cardápio bem variado, com petiscos, bebidas e porções que servem tranquilamente duas pessoas. Ótimo atendimento e boa localização"</p>
+                    </div>
+                </div>
+                
+                <!-- Indicadores de paginação -->
+                <div class="popup-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript para funcionalidades interativas do site -->
+    <script src="js/main.js"></script>
+</body>
+</html>

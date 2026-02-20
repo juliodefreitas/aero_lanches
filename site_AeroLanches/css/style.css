@@ -1,0 +1,1021 @@
+/* ============================================
+   RESET E VARIÁVEIS CSS
+   ============================================ */
+
+/* Reset global: remove margens e paddings padrão de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+/* Variáveis CSS (Custom Properties) para facilitar manutenção e consistência */
+:root {
+    --primary-color: #25D366;      /* Cor verde do WhatsApp */
+    --secondary-color: #FF6B35;    /* Cor laranja principal da marca */
+    --dark-color: #1a1a1a;          /* Cor escura para rodapé */
+    --light-color: #f8f8f8;         /* Cor clara para backgrounds */
+    --text-color: #333;              /* Cor do texto principal */
+    --text-light: #666;              /* Cor do texto secundário */
+    --white: #ffffff;                /* Cor branca */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);           /* Sombra padrão */
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);  /* Sombra no hover */
+    --transition: all 0.3s ease;    /* Transição padrão para animações */
+}
+
+/* Scroll suave ao navegar entre seções */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos do corpo da página */
+body {
+    font-family: 'Poppins', sans-serif;  /* Fonte importada do Google Fonts */
+    line-height: 1.6;                     /* Espaçamento entre linhas */
+    color: var(--text-color);
+    background-color: var(--white);
+    overflow-x: hidden;                   /* Remove scroll horizontal */
+}
+
+/* Container principal: centraliza conteúdo e limita largura máxima */
+.container {
+    width: 100%;
+    max-width: 1200px;  /* Largura máxima do conteúdo */
+    margin: 0 auto;      /* Centraliza horizontalmente */
+    padding: 0 20px;     /* Padding lateral para espaçamento */
+}
+
+/* ============================================
+   HEADER / CABEÇALHO
+   ============================================ */
+
+/* Cabeçalho fixo no topo da página */
+.header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: relative;
+    min-height: 190px;    /* Altura igual ao logo */
+    display: flex;
+    align-items: center;  /* Centraliza verticalmente */
+}
+
+/* Container do header com flexbox para alinhar logo e menu */
+.header .container {
+    display: flex;
+    justify-content: space-between;  /* Logo à esquerda, menu à direita */
+    align-items: center;
+    padding: 0 20px;      /* Sem padding vertical, apenas lateral */
+    width: 100%;          /* Ocupa toda a largura do header */
+}
+
+/* Estilo da imagem do logo */
+.logo-img {
+    height: 190px;        /* Altura fixa igual à altura do header */
+    width: auto;           /* Largura automática mantém proporção */
+    display: block;
+    object-fit: contain;   /* Mantém proporção da imagem */
+}
+
+/* Lista de navegação - oculta por padrão no mobile */
+.nav-list {
+    display: none;         /* Escondido no mobile */
+    list-style: none;
+    gap: 2rem;
+}
+
+/* Menu ativo (quando aberto no mobile) */
+.nav-list.active {
+    display: flex;
+    position: absolute;    /* Posiciona sobre o conteúdo */
+    top: 100%;            /* Abaixo do header */
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    flex-direction: column;  /* Itens em coluna no mobile */
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    gap: 1rem;
+}
+
+/* Links de navegação */
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+    display: block;
+    padding: 0.5rem 0;
+}
+
+/* Efeito hover nos links de navegação */
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Botão hambúrguer para menu mobile */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;  /* 3 linhas empilhadas */
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Cada linha do botão hambúrguer */
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: var(--transition);
+    border-radius: 3px;
+}
+
+/* Animação: transforma em X quando ativo */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);  /* Primeira linha vira diagonal */
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;  /* Segunda linha desaparece */
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);  /* Terceira linha vira diagonal */
+}
+
+/* ============================================
+   HERO SECTION / BANNER PRINCIPAL
+   ============================================ */
+
+/* Seção hero: banner principal com gradiente */
+.hero {
+    margin-top: 70px;                    /* Espaço para o header fixo */
+    height: calc(100vh - 70px);          /* Altura da viewport menos header */
+    min-height: 500px;                    /* Altura mínima para telas pequenas */
+    background: linear-gradient(135deg, var(--secondary-color), #FF8C5A);  /* Gradiente laranja */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Padrão de fundo decorativo (SVG inline) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+    opacity: 0.3;
+}
+
+/* Conteúdo do hero (título, subtítulo e botão) */
+.hero-content {
+    position: relative;
+    z-index: 2;              /* Fica acima do padrão de fundo */
+    padding: 2rem;
+    animation: fadeInUp 1s ease;  /* Animação de entrada */
+}
+
+/* Título principal do hero */
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Sombra no texto para legibilidade */
+}
+
+/* Subtítulo do hero */
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+/* Estilo base para todos os botões */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;      /* Bordas arredondadas (formato pílula) */
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Botão primário: branco com texto laranja */
+.btn-primary {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+/* Efeito hover: eleva o botão */
+.btn-primary:hover {
+    transform: translateY(-3px);  /* Move para cima */
+    box-shadow: var(--shadow-hover);
+}
+
+/* Botão secundário: laranja com texto branco */
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+/* Efeito hover no botão secundário */
+.btn-secondary:hover {
+    background-color: #E55A2B;  /* Laranja mais escuro */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Botão do WhatsApp: verde característico */
+.btn-whatsapp {
+    background-color: var(--primary-color);  /* Verde WhatsApp */
+    color: var(--white);
+    box-shadow: var(--shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    padding: 1.2rem 2.5rem;
+}
+
+/* Efeito hover no botão WhatsApp */
+.btn-whatsapp:hover {
+    background-color: #20BA5A;  /* Verde mais escuro */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ============================================
+   ESTILOS GERAIS DAS SEÇÕES
+   ============================================ */
+
+/* Padding padrão para todas as seções */
+section {
+    padding: 4rem 0;
+}
+
+/* Título das seções */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+/* ============================================
+   SEÇÃO SOBRE
+   ============================================ */
+
+/* Background cinza claro para a seção sobre */
+.sobre {
+    background-color: var(--light-color);
+}
+
+/* Grid responsivo: 1 coluna no mobile, 3 no desktop */
+.qualidades-grid {
+    display: grid;
+    grid-template-columns: 1fr;  /* 1 coluna no mobile */
+    gap: 2rem;
+}
+
+/* Cards de qualidade */
+.qualidade-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+/* Efeito hover: eleva o card */
+.qualidade-card:hover {
+    transform: translateY(-10px);  /* Move para cima */
+    box-shadow: var(--shadow-hover);
+}
+
+/* Ícones dos cards (emojis) */
+.qualidade-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Título dos cards */
+.qualidade-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* Texto dos cards */
+.qualidade-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* ============================================
+   SEÇÃO DE AVALIAÇÕES
+   ============================================ */
+
+.avaliacoes {
+    background-color: var(--white);
+}
+
+/* Grid de avaliações: 1 coluna no mobile, 3 no desktop */
+.avaliacoes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Cards de avaliação */
+.avaliacao-card {
+    background-color: var(--light-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+/* Efeito hover nos cards de avaliação */
+.avaliacao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Cabeçalho do card: nome e estrelas */
+.avaliacao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Nome do cliente */
+.avaliacao-nome {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Sistema de estrelas: usa pseudo-elementos para criar efeito de preenchimento */
+.avaliacao-estrelas {
+    color: #FFD700;  /* Dourado */
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Estrelas vazias (fundo cinza) */
+.avaliacao-estrelas::before {
+    content: '★★★★★';
+    color: #ddd;
+}
+
+/* Estrelas preenchidas (sobrepostas, com largura controlada por classe) */
+.avaliacao-estrelas::after {
+    content: '★★★★★';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FFD700;
+    overflow: hidden;  /* Esconde o excesso baseado na largura */
+}
+
+/* Rating 4.0: 80% das estrelas preenchidas (4 de 5) */
+.avaliacao-estrelas.rating-4-0::after {
+    width: 80%;
+}
+
+/* Rating 3.9: 78% das estrelas preenchidas */
+.avaliacao-estrelas.rating-3-9::after {
+    width: 78%;
+}
+
+/* Rating 4.5: 90% das estrelas preenchidas (4.5 de 5) */
+.avaliacao-estrelas.rating-4-5::after {
+    width: 90%;
+}
+
+/* Rating 5.0: 100% das estrelas preenchidas (5 de 5) */
+.avaliacao-estrelas.rating-5-0::after {
+    width: 100%;
+}
+
+.avaliacao-texto {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0;
+}
+
+.avaliacao-texto::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--secondary-color);
+    opacity: 0.3;
+    line-height: 0;
+    margin-right: 5px;
+}
+
+.avaliacao-texto::after {
+    content: '"';
+    font-size: 2rem;
+    color: var(--secondary-color);
+    opacity: 0.3;
+    line-height: 0;
+    margin-left: 5px;
+}
+
+/* ============================================
+   SEÇÃO DE LOCALIZAÇÃO
+   ============================================ */
+
+/* Grid: endereço e mapa lado a lado no desktop */
+.localizacao-content {
+    display: grid;
+    grid-template-columns: 1fr;  /* 1 coluna no mobile */
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Card com informações do endereço */
+.endereco-info {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-color);
+    border-radius: 15px;
+}
+
+.endereco-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+/* Texto do endereço */
+.endereco-text {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Container do mapa do Google Maps */
+.mapa-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 400px;
+}
+
+/* Iframe do Google Maps */
+.mapa-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ============================================
+   SEÇÃO DE CONTATO
+   ============================================ */
+
+/* Background com gradiente laranja */
+.contato {
+    background: linear-gradient(135deg, var(--secondary-color), #FF8C5A);
+    color: var(--white);
+    text-align: center;
+}
+
+/* Título branco na seção de contato */
+.contato .section-title {
+    color: var(--white);
+}
+
+/* Texto de contato */
+.contato-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* ============================================
+   RODAPÉ
+   ============================================ */
+
+/* Rodapé com fundo escuro */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+/* Grid do conteúdo do rodapé: 1 coluna no mobile, 3 no desktop */
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Títulos das seções do rodapé */
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+/* Texto do rodapé */
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+/* Links de redes sociais */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Ícones de redes sociais (círculos) */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;  /* Formato circular */
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+/* Hover: muda para verde WhatsApp */
+.social-link:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Copyright no rodapé */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+   ============================================ */
+
+/* Botão fixo no canto inferior direito */
+.whatsapp-float {
+    position: fixed;      /* Fixo na tela */
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);  /* Verde WhatsApp */
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;   /* Formato circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 999;        /* Fica acima de outros elementos */
+    transition: var(--transition);
+    animation: pulse 2s infinite;  /* Animação de pulso contínua */
+}
+
+/* Efeito hover: aumenta o tamanho */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-icon {
+    font-size: 2rem;
+}
+
+/* Texto "Pedir Agora" - visível apenas no desktop */
+.whatsapp-text {
+    display: none;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+/* Animação de entrada: fade in de baixo para cima */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);  /* Começa 30px abaixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);     /* Termina na posição normal */
+    }
+}
+
+/* Animação de pulso para o botão WhatsApp */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);  /* Sombra maior no meio */
+    }
+}
+
+/* ============================================
+   MEDIA QUERIES - RESPONSIVIDADE
+   ============================================ */
+
+/* Tablet e telas maiores (768px+) */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 2rem;
+    }
+
+    .nav-list.active {
+        position: static;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .qualidades-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .avaliacoes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .localizacao-content {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 3rem;
+    }
+
+    .endereco-info {
+        text-align: left;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    .whatsapp-float {
+        width: auto;
+        height: auto;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .whatsapp-text {
+        display: block;
+        font-weight: 600;
+    }
+
+    .whatsapp-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    /* Título do hero maior no desktop */
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    /* Padding lateral maior no desktop */
+    .container {
+        padding: 0 40px;
+    }
+
+    /* Cards com mais padding no desktop */
+    .qualidade-card {
+        padding: 3rem 2rem;
+    }
+
+    /* Informações de endereço com mais espaço */
+    .endereco-info {
+        padding: 3rem;
+    }
+}
+
+/* ============================================
+   ANIMAÇÃO DE SCROLL
+   ============================================ */
+
+/* Classe para elementos que aparecem ao fazer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Quando o elemento fica visível (adicionado via JavaScript) */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   POPUP DE RESENHAS EM FORMATO DE CELULAR
+   ============================================ */
+
+/* Overlay escuro de fundo do popup */
+.popup-resenhas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+.popup-resenhas.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.popup-resenhas.active .popup-phone {
+    pointer-events: all;
+}
+
+/* Overlay escuro */
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+/* Celular (container do popup) */
+.popup-phone {
+    position: relative;
+    width: 350px;
+    max-width: 90vw;
+    height: 600px;
+    max-height: 85vh;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    animation: phoneAppear 0.4s ease;
+}
+
+@keyframes phoneAppear {
+    from {
+        transform: scale(0.8) translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Notch do celular (entrada para câmera/sensor) */
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    background-color: #000;
+    border-radius: 0 0 15px 15px;
+    z-index: 10;
+}
+
+/* Header do popup */
+.popup-header {
+    background: linear-gradient(135deg, var(--secondary-color), #FF8C5A);
+    padding: 1.5rem 1.5rem 1rem;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.popup-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Botão de fechar */
+.popup-close {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.popup-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Conteúdo do popup */
+.popup-content {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+/* Carrossel de resenhas */
+.resenhas-carousel {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Slide individual */
+.resenha-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.resenha-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
+}
+
+/* Header da resenha no popup */
+.resenha-header-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.resenha-nome-popup {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.resenha-estrelas-popup {
+    color: #FFD700;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.resenha-estrelas-popup::before {
+    content: '★★★★★';
+    color: #ddd;
+}
+
+.resenha-estrelas-popup::after {
+    content: '★★★★★';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FFD700;
+    overflow: hidden;
+}
+
+.resenha-estrelas-popup.rating-4-0::after {
+    width: 80%;
+}
+
+.resenha-estrelas-popup.rating-3-9::after {
+    width: 78%;
+}
+
+.resenha-estrelas-popup.rating-4-5::after {
+    width: 90%;
+}
+
+/* Rating 5.0: 100% das estrelas preenchidas (5 de 5) */
+.resenha-estrelas-popup.rating-5-0::after {
+    width: 100%;
+}
+
+/* Texto da resenha no popup */
+.resenha-texto-popup {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+/* Indicadores de paginação (bolinhas) */
+.popup-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0 0.5rem;
+}
+
+.popup-indicators .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.popup-indicators .indicator.active {
+    background-color: var(--secondary-color);
+    width: 24px;
+    border-radius: 4px;
+}
